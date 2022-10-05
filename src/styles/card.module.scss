@@ -1,0 +1,38 @@
+.content-card {
+    padding: 12px 24px;
+    background: rgba(233, 233, 233, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    gap: 12px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 150px;
+
+    h1 {
+        font-size: 24px;
+    }
+
+}
+
+.title {
+    p {
+        margin-bottom: 4px;
+        color: #00000073;
+        font-size: 14px;
+        margin-left: 25px;
+    }
+}
+
+.card-body {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    &>div {
+        display: flex;
+    }
+}

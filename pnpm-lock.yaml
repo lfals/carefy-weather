@@ -1,34 +1,38 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/axios': ^0.14.0
   '@types/node': 18.8.2
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  apexcharts: ^3.35.5
   axios: ^1.0.0
   eslint: 8.24.0
   eslint-config-next: 12.3.1
   next: 12.3.1
   react: 18.2.0
+  react-apexcharts: ^1.4.0
   react-dom: 18.2.0
   react-icons: ^4.4.0
+  recoil: ^0.7.5
   sass: ^1.55.0
   typescript: 4.8.4
 
 dependencies:
-  '@types/axios': 0.14.0
   axios: 1.0.0
   next: 12.3.1_2mygebwfgdyopr3fy2qddu2eli
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  recoil: 0.7.5_biqbaboplfbrettd7655fr4n2y
   sass: 1.55.0
 
 devDependencies:
   '@types/node': 18.8.2
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  apexcharts: 3.35.5
   eslint: 8.24.0
   eslint-config-next: 12.3.1_ypn2ylkkyfa5i233caldtndbqa
+  react-apexcharts: 1.4.0_h6blzwyvqeswgdo7gczbninyvy
   react-icons: 4.4.0_react@18.2.0
   typescript: 4.8.4
 
@@ -248,15 +252,6 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@types/axios/0.14.0:
-    resolution: {integrity: sha512-KqQnQbdYE54D7oa/UmYVMZKq7CO4l8DEENzOKc4aBRwxCXSlJXGz83flFx5L7AWrOQnmuN3kVsRdt+GZPPjiVQ==}
-    deprecated: This is a stub types definition for axios (https://github.com/mzabriskie/axios). axios provides its own type definitions, so you don't need @types/axios installed!
-    dependencies:
-      axios: 1.0.0
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
@@ -391,6 +386,17 @@ packages:
       normalize-path: 3.0.0
       picomatch: 2.3.1
     dev: false
+
+  /apexcharts/3.35.5:
+    resolution: {integrity: sha512-Bi3aq35xWntI71JlywXTBBAOhuKTbB4wijKw4ClkIAFV904YDkHPIJ8N9LcZq9fvVb0VX1AEmyOFBOB2Vwsuew==}
+    dependencies:
+      svg.draggable.js: 2.2.2
+      svg.easing.js: 2.0.0
+      svg.filter.js: 2.0.2
+      svg.pathmorphing.js: 0.1.3
+      svg.resize.js: 1.4.3
+      svg.select.js: 3.0.1
+    dev: true
 
   /argparse/2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -1159,6 +1165,10 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
+  /hamt_plus/1.0.2:
+    resolution: {integrity: sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==}
+    dev: false
+
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
     dev: true
@@ -1689,6 +1699,17 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
+  /react-apexcharts/1.4.0_h6blzwyvqeswgdo7gczbninyvy:
+    resolution: {integrity: sha512-DrcMV4aAMrUG+n6412yzyATWEyCDWlpPBBhVbpzBC4PDeuYU6iF84SmExbck+jx5MUm4U5PM3/T307Mc3kzc9Q==}
+    peerDependencies:
+      apexcharts: ^3.18.0
+      react: '>=0.13'
+    dependencies:
+      apexcharts: 3.35.5
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: true
+
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -1722,6 +1743,23 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+    dev: false
+
+  /recoil/0.7.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-GVShsj5+M/2GULWBs5WBJGcsNis/d3YvDiaKjYh3mLKXftjtmk9kfaQ8jwjoIXySCwn8/RhgJ4Sshwgzj2UpFA==}
+    peerDependencies:
+      react: '>=16.13.1'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      hamt_plus: 1.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /regenerator-runtime/0.13.9:
@@ -1922,6 +1960,60 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /svg.draggable.js/2.2.2:
+    resolution: {integrity: sha512-JzNHBc2fLQMzYCZ90KZHN2ohXL0BQJGQimK1kGk6AvSeibuKcIdDX9Kr0dT9+UJ5O8nYA0RB839Lhvk4CY4MZw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: true
+
+  /svg.easing.js/2.0.0:
+    resolution: {integrity: sha512-//ctPdJMGy22YoYGV+3HEfHbm6/69LJUTAqI2/5qBvaNHZ9uUFVC82B0Pl299HzgH13rKrBgi4+XyXXyVWWthA==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: true
+
+  /svg.filter.js/2.0.2:
+    resolution: {integrity: sha512-xkGBwU+dKBzqg5PtilaTb0EYPqPfJ9Q6saVldX+5vCRy31P6TlRCP3U9NxH3HEufkKkpNgdTLBJnmhDHeTqAkw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: true
+
+  /svg.js/2.7.1:
+    resolution: {integrity: sha512-ycbxpizEQktk3FYvn/8BH+6/EuWXg7ZpQREJvgacqn46gIddG24tNNe4Son6omdXCnSOaApnpZw6MPCBA1dODA==}
+    dev: true
+
+  /svg.pathmorphing.js/0.1.3:
+    resolution: {integrity: sha512-49HWI9X4XQR/JG1qXkSDV8xViuTLIWm/B/7YuQELV5KMOPtXjiwH4XPJvr/ghEDibmLQ9Oc22dpWpG0vUDDNww==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: true
+
+  /svg.resize.js/1.4.3:
+    resolution: {integrity: sha512-9k5sXJuPKp+mVzXNvxz7U0uC9oVMQrrf7cFsETznzUDDm0x8+77dtZkWdMfRlmbkEEYvUn9btKuZ3n41oNA+uw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+      svg.select.js: 2.1.2
+    dev: true
+
+  /svg.select.js/2.1.2:
+    resolution: {integrity: sha512-tH6ABEyJsAOVAhwcCjF8mw4crjXSI1aa7j2VQR8ZuJ37H2MBUbyeqYr5nEO7sSN3cy9AR9DUwNg0t/962HlDbQ==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: true
+
+  /svg.select.js/3.0.1:
+    resolution: {integrity: sha512-h5IS/hKkuVCbKSieR9uQCj9w+zLHoPh+ce19bBYyqF53g6mnPB8sAtIbe1s9dh2S2fCmYX2xel1Ln3PJBbK4kw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
     dev: true
 
   /text-table/0.2.0:

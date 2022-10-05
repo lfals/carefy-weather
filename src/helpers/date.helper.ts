@@ -31,13 +31,15 @@ const shortMonthArray = [
 
 const weekArray = [
     'Domingo',
-    'Segunda-Feira',
-    'Terça-Feira',
-    'Quarta-Feira',
-    'Quinta-Feira',
-    'Sexta-Feira',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
     'Sábado'
 ]
+
+
 
 export {
     monthArray,

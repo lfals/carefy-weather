@@ -4,6 +4,14 @@
     height: 100vh;
 }
 
+@media screen and (max-width: 800px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1080px;
+    }
+}
+
 .wheater-container {
     height: 100%;
     display: grid;
@@ -46,7 +54,8 @@
         font-size: 24px;
     }
 
-    img {
+    img,
+    svg {
         width: 150px;
     }
 

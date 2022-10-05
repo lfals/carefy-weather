@@ -1,12 +1,18 @@
 import axios from 'axios'
-
-const getLocation = async () => {
-    const apiKey = process.env.ACCUWEATHER_API
-    const response = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${apiKey}&q=-22.9485%2C-43.3436&language=pt-br`)
+import { ILocation } from '../types/location.type'
 
 
-    return response.data.Key
 
+const getLocation = async ({ latitude, longitude }: IGeoLocation) => {
+    try {
+        const apiKey = process.env.ACCUWEATHER_API
+        const response = await axios.get(`${process.env.ACCUWEATHER_API_BASE_URL}locations/v1/cities/geoposition/search?apikey=${apiKey}&q=${latitude}%2C${longitude}&language=pt-br`)
+        const location: ILocation = response.data
+        return location
+    } catch (error) {
+        console.log(error);
+
+    }
 }
 
 export default getLocation
