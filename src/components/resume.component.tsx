@@ -58,7 +58,6 @@ function Resume() {
         const response = await getCurrentCondition(city.Key)
         if (response) {
             setWeather(response[0])
-            console.log(forecast);
 
         }
 
@@ -78,7 +77,7 @@ function Resume() {
             <div className={layout['wheater-container']}>
                 <div className={layout['city-info-container']}>
                     <div>
-                        <h1 className={layout['city-name']}>{city.LocalizedName?.split(' ')[0]}</h1>
+                        <h1 className={layout['city-name']}>{city.LocalizedName}</h1>
                         <p>{`${city.AdministrativeArea?.LocalizedName}, ${city.AdministrativeArea?.ID}`}</p>
                     </div>
                     <h1>{currentTime}</h1>

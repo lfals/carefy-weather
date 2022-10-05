@@ -1,4 +1,4 @@
-import React, { FormEvent,useEffect, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import { FiWind } from 'react-icons/fi'
 import { MdArrowDropDown, MdArrowDropUp, MdOutlineWbSunny } from 'react-icons/md'
 import { useRecoilState, useSetRecoilState } from 'recoil'
@@ -7,8 +7,8 @@ import { useDebounce } from '../hooks/debounce.hook'
 import getCityNames from '../services/get-citynames.service'
 import getLocation from '../services/get-location.api.service'
 import layout from '../styles/details.module.scss'
-import { CitySearch  } from '../types/city-search'
-import { AirAndPollen  } from '../types/daily-forecast'
+import { CitySearch } from '../types/city-search'
+import { AirAndPollen } from '../types/daily-forecast'
 import Card from './card.component'
 import { Charts } from './chart.component'
 import cityAtom from '../hooks/city.hook.atom'
@@ -74,7 +74,6 @@ function Details() {
         const AdministrativeAreaId = searchSplited[1].replaceAll(' ', '')
         const selectedOption = cityOptions.filter(item => item.LocalizedName.replaceAll(' ', '') === localizedName).filter(item => item.AdministrativeArea.ID === AdministrativeAreaId)[0]
 
-        console.log(searchSplited);
 
 
         const data: ICity = {
@@ -83,7 +82,6 @@ function Details() {
             Key: selectedOption.Key
         }
         setCity(data)
-        console.log(data);
 
         localStorage.setItem('@city:data', JSON.stringify(data))
         setSearch("")
