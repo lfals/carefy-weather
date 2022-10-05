@@ -6,7 +6,6 @@ import { useRecoilValue } from 'recoil';
 import { weekArray } from '../helpers/date.helper';
 import cityAtom from '../hooks/city.hook.atom';
 import getDailyForecast from '../services/get-dailyforecast.api.service';
-import { IForeCast } from '../types/forecast.type';
 const Chart = dynamic(() => import('react-apexcharts'), {
     ssr: false
 });

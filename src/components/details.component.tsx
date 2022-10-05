@@ -1,16 +1,14 @@
-import React, { FormEvent, FormEventHandler, useEffect, useState } from 'react'
+import React, { FormEvent,useEffect, useState } from 'react'
 import { FiWind } from 'react-icons/fi'
 import { MdArrowDropDown, MdArrowDropUp, MdOutlineWbSunny } from 'react-icons/md'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import { monthArray, shortMonthArray, weekArray } from '../helpers/date.helper'
 import { useDebounce } from '../hooks/debounce.hook'
-import useLocation from '../hooks/location.hooks'
 import getCityNames from '../services/get-citynames.service'
 import getLocation from '../services/get-location.api.service'
 import layout from '../styles/details.module.scss'
-import { CitySearch, ICitySearch } from '../types/city-search'
-import { AirAndPollen, IDailyForecast } from '../types/daily-forecast'
-import { IForeCast } from '../types/forecast.type'
+import { CitySearch  } from '../types/city-search'
+import { AirAndPollen  } from '../types/daily-forecast'
 import Card from './card.component'
 import { Charts } from './chart.component'
 import cityAtom from '../hooks/city.hook.atom'
@@ -71,8 +69,14 @@ function Details() {
         if (search === "") {
             return
         }
+        const searchSplited = search.split('-')
+        const localizedName = searchSplited[0].replaceAll(' ', '')
+        const AdministrativeAreaId = searchSplited[1].replaceAll(' ', '')
+        const selectedOption = cityOptions.filter(item => item.LocalizedName.replaceAll(' ', '') === localizedName).filter(item => item.AdministrativeArea.ID === AdministrativeAreaId)[0]
 
-        const selectedOption = cityOptions.filter(item => item.LocalizedName === search.split(' ')[0]).filter(item => item.AdministrativeArea.ID === search.split(' ')[2])[0]
+        console.log(searchSplited);
+
+
         const data: ICity = {
             LocalizedName: selectedOption.LocalizedName,
             AdministrativeArea: selectedOption.AdministrativeArea,
@@ -95,7 +99,11 @@ function Details() {
 
     const currentLocation = async (e: GeolocationPosition) => {
         const { latitude, longitude } = e.coords
-        const { Key, LocalizedName, AdministrativeArea } = await getLocation({ latitude, longitude })
+        const response = await getLocation({ latitude, longitude })
+        if (response === undefined) {
+            return
+        }
+        const { Key, LocalizedName, AdministrativeArea } = response
         setCity({ Key, LocalizedName, AdministrativeArea })
         localStorage.setItem('@city:data', JSON.stringify({ Key, LocalizedName, AdministrativeArea }))
     }

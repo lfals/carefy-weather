@@ -1,15 +1,9 @@
-import React, { Component, useEffect, useState } from 'react'
-import useEase from '../hooks/ease-number.hooks';
+import React, { useEffect, useState } from 'react'
 import layout from '../styles/layout.module.scss'
 import { BsSunset, BsSunrise } from 'react-icons/bs'
-import { TiWeatherCloudy } from 'react-icons/ti'
 import useClock from '../hooks/clock.hooks';
-import { ILocation } from '../types/location.type';
-import { IForeCast } from '../types/forecast.type';
 import { ICurrentWeather } from '../types/curent.type';
-import { IDailyForecast } from '../types/daily-forecast';
 import icons from '../helpers/icons.helper';
-import useLocation from '../hooks/location.hooks';
 import { useRecoilValue } from 'recoil';
 import forecastAtom from '../hooks/forecast.hook.atom';
 import cityAtom from '../hooks/city.hook.atom';
